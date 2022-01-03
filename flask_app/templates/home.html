@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/my_script.js') }}" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>My Riverside Cleaner Service {{ now| dateFormat}} - Your Professional Cleaning Service Near You</title>
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Cleaning, Services, Near Me, 2022, Commercial Cleaning, Deep Cleaning, General Cleaning, Local Business, Local Cleaning Service, Home Cleaing, Office Cleaning, Service, ">
+    <!-- META DESCRIPTION -->
+    <meta name="description" content="Welcome to My Riverside Cleaning Service, We are a Family owned local commercial and residential cleaning service in the Northern Virginia District of Columbia and Maryland Area, We offer many services some which include General Cleaning, Deep Cleaning and Commercial Cleaning. ">
+    <!-- Author-->
+    <meta name="author" content="My Riverside Cleaner Service">
+</head>
+<body>
+    
+    <!-- NAV BAR SECTION -->
+    <section id="home"class="header">
+        <nav>
+            <a href="/cleaning-service/home"><img src="{{ url_for('static', filename='img/logo.png') }}"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#Home" title="Home">Home</a></li>
+                    <li><a href="#About-Us" title="About-Us">About Us</a></li>
+                    <li><a href="#Service" title="Services">Services</a></li>
+                    <li><a href="#Reviews" title="Testimonials">Testimonials</a></li>
+                    <li><a href="#Contact-Us" title="Contact-Us">Contact Us</a></li>
+                </ul>   
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" ></i>
+        </nav>
+    <div class="text-box">
+        <h1>Leave the Cleaning To Us!</h1>
+        <a href="#Contact-Us" class="hero-btn" title="Contact-Us">Contact Us</a>
+    </div>
+    </section>
+    <!-- About Us -->
+    <section id="About-Us"class="about-us">
+        <div class="about-us-row">
+            <div class="aboutUs-col">
+                <img class="abt-img" src="{{ url_for('static', filename='img/spray-min.jpg') }}" alt="image of spray">
+            </div>
+            <div class="aboutUs-col">
+                <div class="intro">
+                    <h1 class="aboutUs">About Us</h1> 
+                    <h1 class="aboutUs-h1">Best Cleaning Services Provider Since 2010</h1>
+                    <p class="description">
+                        Welcome to My Riverside Cleaner, We are family owned and operated, since 2010. We are a Local business in
+                        the Northern Virginia, District of Columbia and Maryland Area. We offer high-quality cleaning
+                        services to
+                        residential and commercial buildings. Our Mission is provide our customers with 100%
+                        Satisfaction on every cleaning Project.
+                    </p>
+                    <div class="check-box-list">
+                        <img class="check-box" src="{{ url_for('static', filename='img/check-square.svg') }}">
+                        <h3>Flexible Arrival Time</h3>
+                    </div>
+                    <div class="check-box-list">
+                        <img class="check-box" src="{{ url_for('static', filename='img/check-square.svg') }}">
+                        <h3 class="sz-text">Provide the Finest Cleaning</h3>
+                    </div>
+                    <div class="check-box-list">
+                        <img class="check-box" src="{{ url_for('static', filename='img/check-square.svg') }}">
+                        <h3>100% Satisfaction </h3>
+                    </div>
+                    <div class="check-box-list">
+                        <img class="check-box" src="{{ url_for('static', filename='img/check-square.svg') }}">
+                        <h3>Deep Cleaning</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call TO ACTION BANNER -->
+    <Div class="call">  
+        <div class="call-row">
+            <div class="call-col">
+                    <h2 class="book">Book Your House Cleaning Now! </h2>
+            </div>
+            <div class="call-col">
+                <button type="button" class="banner-btn" class="btn btn-outline-primary" > <a href="#Contact-Us" class="call-btn2" title="Contact-Us">Book Cleaning  </a>  </button>
+            </div>
+        </div>
+    </Div>
+    <!-- SERVICES SECTION -->
+    <section id="Service" class="service">
+        <h1 class="service-h1"> Our Services</h1>
+        <div class="row">
+            <div class="service-col">
+                <h3 class="h3">General Home Cleaning </h3>
+                <div class="service-img"></div>
+                <div class="srvs-off">
+                    <p class="serv-des">
+                        Our General Home Cleaning includes the Following: 
+                            Cleaning Bathroom, Cleaning Kitchen, Regulat Dusting, Vacuum Hardwood/ Entire Carpets, Cleaning outside Ovens & Microwaves.
+                    </p>
+
+                </div>
+                
+
+            </div>
+            <div class="service-col">
+                <h3>Deep Home Cleaning</h3>
+                <div class="service-img2"></div>
+                <div class="srvs-off">
+                    <p class="serv-des">
+                        Our Deep Cleaning includes the Following: 
+                            Cleaning Bathroom, Cleaning Kitchen, Cleaning Windows, Cleaning Doors, Dust and Wipe Baseboards,Vacuum Furniture, Clean Ceiling Fans, Dust Picture Frames, 
+                            Cleaning outside & Inside Ovens & Microwaves.
+                    </p>
+
+                </div>
+            </div>
+            <div class="service-col">
+                <h3 class="cmrc-title">Commercial Cleaning</h3>
+                <div class="service-img3"></div>
+
+                <div class="srvs-off">
+                    <p class="serv-des">
+                        Our Commercial Cleaning includes: 
+                        Dusting, Vacuuming, Cleaning Bathrooms, Disinfecting Waiting Rooms, Cleaning Offices, Cleaning Carpets, Wax Floors, Cleaning Kitchen Area,
+                        Clean Doors, Cleaning Windows, Take Out Trash,  Shinning Floors. 
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="Reviews"class="reviews">
+        <h1> What our Customers Say</h1>
+        <div class="row">
+            <div class="review-col">
+                <!-- <img class="ppl-img" src="{{('static/img/flower.jpeg')}}" alt="image of a girl"> -->
+                    <div>
+                        <h3>Michael Roberts</h3>
+                        <p>
+                            My Riverside Cleaner, did an Ecxellent job cleaning my Home, I was truly impressed by their customer service.              </p>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star" class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                    </div>
+            </div>
+            <div class="review-col">
+                <!-- <img class="ppl-img" src="{{('static/img/flower.jpeg')}}" alt="image of a girl"> -->
+                    <div>
+                        
+                        <h3> Jose M</h3>
+                        <p>
+                            Best Cleaning service in the DMV, My Riverside Cleaner offer great rates, and all exceed expectations!
+                        </p>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        
+                    </div>
+            </div>
+            <div class="review-col">
+                <!-- <img class="ppl-img" src="{{('static/img/flower.jpeg')}}" alt="image of a girl"> -->
+                    <div>
+                        <h3>Ashley R</h3>
+                        <p>
+                            My family, and I have been using My Riverside Cleaner for the last 3 Years, We highly recommend them their service. 
+                        </p>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                        <i id="star"class="fa fa-star" ></i>
+                    </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Book Cleaning FORM -->
+    <section id="Contact-Us" class="form">
+        <div class="success">
+            {% with messages = get_flashed_messages(category_filter=["success"])%}
+        {%if messages%}
+            {%for msg in messages%}
+            <p class="success-alert" id="alertMsg" >{{msg}} </p><button id="close" class="close" onclick="deleteAlert()"><i  class="fa fa-times" ></i></button>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+        <div class="contact-sect">
+            <!-- <span><i id="close" class="fa fa-times" ></i></span>  -->
+            
+            <div class="contact-row">
+
+                <div class="get-in-touch">
+                    <form action="/cleaning-service/contact/submitted" class="form-sect" method="post">
+                        <div class="contact-title">
+                            <div>
+                                <h2 class="underline" > Book Now! </h2>
+                            </div>
+
+                        </div>
+                        <!-- Form Validation -->
+                        <div class="input-f">
+
+                            <!-- NAME INPUT -->
+                            
+                                {% with messages = get_flashed_messages(category_filter=["name"])%}
+                                {%if messages%}
+                                    {%for msg in messages%}
+                                        <input id="valid" class="name" class="error-msg"   placeholder= "{{msg}}" type="text" name="name" > 
+                                        {% endfor %}
+                                        {%else%}
+                                            <input   class="name"  placeholder=" Name" type="text" name="name" > 
+                                    {% endif %}
+                                {% endwith %}
+
+                            <!-- EMAIL INPUT -->
+                                {% with messages = get_flashed_messages(category_filter=["email"])%}
+                                {%if messages%}
+                                    {%for msg in messages%}
+                                        <input  id="valid" class="email" class="error-msg"  placeholder="{{msg}}" type="email" name="email" > 
+                                    {% endfor %}
+                                    {%else%}
+                                        <input   class="email" placeholder=" Email" type="email" name="email" > 
+                                    {% endif %}
+                                {% endwith %}
+                        </div>
+                        
+
+                        <!-- Phone Input  Validation-->
+                        <div class="input-f">
+
+
+                            {% with messages = get_flashed_messages(category_filter=["phone"])%}
+                            {%if messages%}
+                                {%for msg in messages%}
+                                <input  id="valid" class="number" class="error-msg"  placeholder=" {{msg}}" type="text" name="phone" > 
+                                {% endfor %}
+                                {%else%}
+                                <input  class="number" placeholder=" Phone Number" type="text" name="phone" > 
+                                {% endif %}
+                            {% endwith %}
+                            
+                        </div>
+                        <!--  Message input Validation-->
+                        <div class="input-fm">
+
+                            {% with messages = get_flashed_messages(category_filter=["message"])%}
+                            {%if messages%}
+                                {%for msg in messages%}
+                                <textarea id="valid" class="msg-style" class="error-msg" name="message" rows="6" cols="66" maxlength="250" class="msg" placeholder="{{msg}}" ></textarea>
+
+                                {% endfor %}
+                                {%else%}
+                                <textarea name="message" rows="5" cols="58" maxlength="250" class="msg" placeholder=" Message" ></textarea>
+                                {% endif %}
+                            {% endwith %}
+                            <button class="contact-btn"type="submit" > SEND MESSAGE </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="reach-us">
+                    <div class="contact-title">
+                        <div class="reach-us-info">
+                            <h2 > Contact Info </h2>
+                            <div class="info">
+                                <p> <i class="fa fa-phone" ></i><a href="tel: +1-703-582-9734" class="number-info">(571) 260-3963    </a></p>
+                                <p><i class="fa fa-envelope"></i>support@myriversidecleaner.com  </p>
+                                <p><i class="fa fa-map-marker" ></i>DMV </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Footer">
+        <div class="logo-ft" >
+        <img class="logo-ftr" src="{{ url_for('static', filename='img/logo.png') }}">
+        </div>
+        <p class="ft">© 2022 My Riverside Cleaner. Designed by <a class="link"href="https://www.linkedin.com/in/marvin-mdiaz/" target="_blank">Diaz Development</a></p>
+
+    </section>
+
+</body>
+</html>
