@@ -1,7 +1,13 @@
 from flask import Flask
+from flask_mail import Mail, Message
+import os
+
+
+
 
 app = Flask(__name__)
-import os
+
+
 
 app.secret_key = os.environ.get("SECRET_KEY")
 
