@@ -1,11 +1,18 @@
 from flask import render_template,request,redirect,session, Flask
 from flask_app import app
 from flask import flash
-import smtplib
 from flask_app.models.user import User
 from flask_mail import Mail, Message
 import os
 from datetime import datetime
+# EMAIL SENDING IMPORTS #
+import email
+import emails
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+
 
 
 @app.route('/')
@@ -24,28 +31,44 @@ def  datetimeFormat(value, format='%Y'):
 
 @app.route("/cleaning-service/contact/submitted", methods=["POST"])
 def contactForm():
-
-
-
-        if not User.validate_form(request.form):
-            return redirect("/cleaning-service/home#Contact-Us")
-        else:
-            mail = Mail(app)
-            name= request.form['name']
-            email = request.form['email']
-            phone = request.form['phone']
-            message = request.form['message']
-
-            msg= Message(subject=f" New Mail from:  '{email}'", body=f"\n\nClients Name: {name}\n\n Email: {email}\n\nPhone Number:{phone}\n\n\nMessage: {message}", sender=os.environ.get("mail_username"), recipients=["support@myriversidecleaner.com"] )
-
-            mail.send(msg)
-
-            flash("Message was Succesfully sent ", "success")
-
-            print("Message was Succesfully sent ")
-
-
+    if not User.validate_form(request.form):
         return redirect("/cleaning-service/home#Contact-Us")
+    else:
+        name= request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        msg = request.form['message']
+
+        message = emails.html(
+
+            html =  f"<br>Clients Name:{name}<br>"
+                    f"Email: {email}<br>"
+                    f"Phone Number:{phone}<br>"
+                    f"Message: {msg}<br>",
+            subject = f"New email from Website<br>",
+            mail_from = os.environ.get("mail_username2")
+
+    )
+
+        message.send(
+            to = os.environ.get("mail_username"),
+            smtp = {
+                "host": "email-smtp.us-east-1.amazonaws.com",
+                "port": 587, 
+                "timeout": 5,
+                "user": os.environ.get("SMTP_Username"),
+                "password": os.environ.get("SMTP_Password"),
+                "tls": True,
+            }
+        )
+
+
+        flash("Message was Succesfully sent ", "success")
+
+        print("Message was Succesfully sent ")
+
+
+    return redirect("/cleaning-service/home#Contact-Us")
 
 
 
