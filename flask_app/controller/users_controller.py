@@ -6,7 +6,7 @@ from flask_app.models.user import User
 from flask_mail import Mail, Message
 import os
 from datetime import datetime
-
+mail = Mail(app)
 
 @app.route('/')
 def root():
@@ -30,13 +30,12 @@ def contactForm():
         if not User.validate_form(request.form):
             return redirect("/cleaning-service/home#Contact-Us")
         else:
-            mail = Mail(app)
             name= request.form['name']
             email = request.form['email']
             phone = request.form['phone']
             message = request.form['message']
 
-            msg= Message(subject=f" New Mail from:  '{email}'", body=f"\n\nClients Name: {name}\n\n Email: {email}\n\nPhone Number:{phone}\n\n\nMessage: {message}", sender=os.environ.get("mail_username"), recipients=["support@myriversidecleaner.com"] )
+            msg= Message(subject=f" New Mail from:  '{email}'", body=f"\n\nClients Name: {name}\n\n Email: {email}\n\nPhone Number:{phone}\n\n\nMessage: {message}", sender=os.environ.get("mail_username2"), recipients=["support@myriversidecleaner.com"] )
 
             mail.send(msg)
 
