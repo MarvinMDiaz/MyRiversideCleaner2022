@@ -24,27 +24,31 @@ def  datetimeFormat(value, format='%Y'):
 
 @app.route("/cleaning-service/contact/submitted", methods=["POST"])
 def contactForm():
-
-
-
-        if not User.validate_form(request.form):
-            return redirect("/cleaning-service/home#Contact-Us")
-        else:
-            name= request.form['name']
-            email = request.form['email']
-            phone = request.form['phone']
-            message = request.form['message']
-
-            msg= Message(subject=f" New Mail from:  '{email}'", body=f"\n\nClients Name: {name}\n\n Email: {email}\n\nPhone Number:{phone}\n\n\nMessage: {message}", sender=os.environ.get("mail_username2"), recipients=["support@myriversidecleaner.com"] )
-
-            mail.send(msg)
-
-            flash("Message was Succesfully sent ", "success")
-
-            print("Message was Succesfully sent ")
-
-
+    if not User.validate_form(request.form):
+        print("Failed Validation")
         return redirect("/cleaning-service/home#Contact-Us")
+    else:
+        print("Grabbing Form Details")
+        name= request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = request.form['message']
+
+        print("Form Info Grabbed")
+
+        msg= Message(subject=f" New Mail from:  '{email}'", body=f"\n\nClients Name: {name}\n\n Email: {email}\n\nPhone Number:{phone}\n\n\nMessage: {message}", sender="diazm.webdev@gmail.com", recipients=["support@myriversidecleaner.com"] )
+
+        print("form formatted")
+
+        print(msg)
+        mail.send(msg)
+
+        flash("Message was Succesfully sent ", "success")
+
+        print("Message was Succesfully sent ")
+
+
+    return redirect("/cleaning-service/home#Contact-Us")
 
 
 

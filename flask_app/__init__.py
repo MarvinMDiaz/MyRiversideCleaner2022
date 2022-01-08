@@ -5,28 +5,49 @@ import os
 
 
 app = Flask(__name__)
+mail= Mail(app)
 
 
-# app.config['MAIL_SERVER'] = "smtp.gmail.com"
-app.config['DEBUG'] = True
-app.config['TESTING'] = False
-app.config['MAIL_SERVER'] = "email-smtp.us-east-1.amazonaws.com"
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USE_TLS']=  False
+
+app.config['MAIL_SERVER'] = "smtp.gmail.com"
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS']= False
 app.config['MAIL_USE_SSL']= True
-app.config['MAIL_DEBUG'] = True
-# app.config["MAIL_USERNAME"]= os.environ.get("mail_username")
-app.config["MAIL_USERNAME"]= os.environ.get("SMTP_Username")
-# app.config["MAIL_PASSWORD"] = os.environ.get("mail_password")
-app.config["MAIL_PASSWORD"] = os.environ.get("SMTP_Password")
-app.config['MAIL_DEFAULT_SENDER'] = None
-app.config['MAIL__MAX_EMAILS'] = None
-app.config['MAIL_ASCII_ATTACHMENTS'] = False
+app.config["MAIL_USERNAME"]= "support@myriversidecleaner.com"
+app.config["MAIL_PASSWORD"] = "B3stCleaning22!*"
 
 mail = Mail(app)
 
 
+app.secret_key = "31xW1I3dhsjBToyYnXOOLc9MhXjfAhcy"
 
 
-app.secret_key = os.environ.get("SECRET_KEY")
+
+
+
+
+
+
+
+
+
+
+# app.config['MAIL_SERVER'] = "smtp.gmail.com"
+
+
+# app.config['DEBUG'] = True
+# app.config['TESTING'] = False
+# app.config['MAIL_SERVER'] = "email-smtp.us-east-1.amazonaws.com"
+# app.config['MAIL_PORT'] = 465
+# app.config['MAIL_USE_TLS']=  False
+# app.config['MAIL_USE_SSL']= True
+# app.config['MAIL_DEBUG'] = True
+# app.config["MAIL_USERNAME"]= os.environ.get("mail_username")
+# app.config["MAIL_USERNAME"]= os.environ.get("SMTP_Username")
+# app.config["MAIL_PASSWORD"] = os.environ.get("mail_password")
+# app.config["MAIL_PASSWORD"] = os.environ.get("SMTP_Password")
+# app.config['MAIL_DEFAULT_SENDER'] = None
+# app.config['MAIL__MAX_EMAILS'] = None
+# app.config['MAIL_ASCII_ATTACHMENTS'] = False
+
 
